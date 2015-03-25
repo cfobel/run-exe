@@ -1,0 +1,7 @@
+include README.md
+include COPYING
+include setup.py
+include version.py
+include RELEASE-VERSION
+recursive-include run_exe *
+recursive-exclude run_exe *.pyc
