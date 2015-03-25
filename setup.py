@@ -1,10 +1,8 @@
-import sys
-import os
-import pkg_resources
 import platform
+import sys
+from distutils.core import setup
 
-from paver.easy import task, needs, path
-from paver.setuputils import setup
+from path_helpers import path
 
 root_dir = path(__file__).parent.abspath()
 if root_dir not in sys.path:
@@ -16,16 +14,15 @@ if platform.system() == 'Windows':
     install_requires = ['pywin32']
 
 
-setup(name='run_exe',
+setup(name='run-exe',
       version=version.getVersion(),
       description='Run executable file, with option to try as admin on error '
       'on Windows.',
       keywords='process windows administrator launch',
       author='Christian Fobel',
       author_email='christian@fobel.net',
-      url='https://github.com/cfobel/run_exe',
+      url='https://github.com/cfobel/run-exe',
       license='GPL',
       long_description='\n%s\n' % open('README.md', 'rt').read(),
       packages=['run_exe'],
-      include_package_data=True,
       install_requires=install_requires)
