@@ -8,7 +8,7 @@ class CancelAction(RuntimeError):
 
 
 def run_exe(exe, params, try_admin=False):
-    process = Popen('%s %s' % (sys.executable, params),
+    process = Popen('%s %s' % (exe, params),
                     shell=True, stdout=PIPE, stderr=PIPE)
     stdout, stderr = process.communicate()
 
@@ -36,7 +36,7 @@ def run_exe(exe, params, try_admin=False):
             WAIT_FOREVER = -1
 
             process_info = shell.ShellExecuteEx(lpVerb='runas',
-                                                lpFile=sys.executable,
+                                                lpFile=exe,
                                                 lpParameters=params,
                                                 nShow=win32con.SW_SHOW,
                                                 fMask=
