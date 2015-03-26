@@ -10,10 +10,6 @@ if root_dir not in sys.path:
 import version
 
 
-if platform.system() == 'Windows':
-    install_requires = ['pywin32']
-
-
 setup(name='run-exe',
       version=version.getVersion(),
       description='Run executable file, with option to try as admin on error '
@@ -24,5 +20,4 @@ setup(name='run-exe',
       url='https://github.com/cfobel/run-exe',
       license='GPL',
       long_description='\n%s\n' % open('README.md', 'rt').read(),
-      packages=['run_exe'],
-      install_requires=install_requires)
+      packages=['run_exe'])
